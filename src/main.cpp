@@ -1,8 +1,8 @@
 // Copyright 2022 NNTU-CS
-#include "tree.h"
 #include <vector>
 #include <fstream>
 #include <chrono>
+#include "tree.h"
 
 int main() {
   std::ofstream out("result/times.csv");
