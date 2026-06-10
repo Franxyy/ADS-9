@@ -4,11 +4,12 @@
 
 #include <vector>
 #include <memory>
+#include <utility>
 
 struct PMNode {
   char value;
   std::vector<std::unique_ptr<PMNode>> children;
-  PMNode(char val) : value(val) {}
+  explicit PMNode(char val) : value(val) {}
 };
 
 class PMTree {
@@ -26,8 +27,8 @@ class PMTree {
     }
   }
 
-public:
-  PMTree(const std::vector<char>& in) {
+ public:
+  explicit PMTree(const std::vector<char>& in) {
     root = std::make_unique<PMNode>('\0');
     build(root.get(), in);
   }
